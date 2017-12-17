@@ -1,0 +1,164 @@
+@charset "utf-8";
+
+/* New Perspectives on HTML5 and CSS3, 7th Edition Tutorial 8 Case Problem 2
+
+Big Apple Physics Reset Style Sheet
+
+Filename: ba_base.css
+
+*/
+
+/* Basic styles to be used with all devices and under all conditions */
+
+article, aside, figcaption, figure, footer, header, main, nav, section { display: block; }
+
+address, article, aside, blockquote, body, cite, div, dl, dt, dd, em, figcaption, figure, footer, h1, h2, h3, h4, h5, h6, header, html, img, li, main, nav, nav a, ol, p, section, span, ul, table, tr, td, th, col, colgroup { margin: 0; padding: 0; border: 0; font-size: 100%; background: transparent; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;
+}
+
+/* Set the default page element styles */
+$width_container: 600px;
+
+body {
+  width: $width_container;
+  margin: 0 auto;
+  line-height: 1.2em;
+}
+
+ul, ol { list-style: none; }
+
+nav ul { list-style: none; list-style-image: none; }
+
+nav a { text-decoration: none; }
+
+p { margin-bottom: 1em; }
+
+/* CSS Stylesheet Animate */
+
+nav a { background-repeat: no-repeat; background-position: center; background-size: 0% 0%; color: rgb(253, 240, 133); transition: background-size 0.3s, color 0.8s; }
+
+nav a:hover { background-size: 100% 100%; color: rgb(244, 130, 130); }
+
+// Ball styles
+$width_red: 100px;
+$width_blue: 50px;
+
+#animBox {
+  width: $width_container;
+  margin: 0 auto;
+  position: relative;
+  border: 1px solid #777;
+  border-right: 0;
+  border-left: 0;
+  margin: 6em 0;
+}
+
+img {
+  position: absolute;
+  border-radius: 50%;
+  animation-fill-mode: forwards;
+}
+
+img#redBall {
+  top: -$width_red / 2;
+  left: 0;
+  width: $width_red;
+  height: $width_red;
+  background: red;
+  animation: moveRed 5s linear infinite;
+  filter: drop-shadow(-40px 20px 25px rgb(51, 51, 51));
+}
+
+img#blueBall {
+  top: -$width_blue / 2;
+  right: 0;
+  width: $width_blue;
+  height: $width_blue;
+  background: blue;
+  animation: moveBlue 5s linear infinite;
+  filter: drop-shadow(40px 20px 25px rgb(51, 51, 51));
+}
+
+div#redSpeed1 { animation: 5s liner infinite; }
+
+div#blueSpeed1 { animation: 5s liner infinite; }
+
+div#redSpeed2 { animation: 5s liner infinite; }
+
+div#blueSpeed2 { animation: 5s liner infinite; }
+
+/* Animation Styles */
+
+
+@keyframes moveRed {
+  0% {
+    left: 0px;
+    filter: drop-shadow(-40px 20px 25px rgb(51, 51, 51));
+  }
+  49% {
+    transform: scaleX(1);
+  }
+  50% {
+    left: 380px;
+    filter: drop-shadow(0px 0px 0px rgb(51, 51, 51));
+    transform: scaleX(0.4);
+  }
+  51% {
+    transform: scaleX(1);
+  }
+  100% {
+    left: 0px;
+    filter: drop-shadow(-40px 20px 25px rgb(51, 51, 51));
+  }
+}
+
+@keyframes moveBlue {
+  0% {
+    right: 0px;
+    filter: drop-shadow(40px 20px 25px rgb(51, 51, 51));
+  }
+  49% {
+    transform: scaleX(1);
+  }
+  50% {
+    right: 380px;
+    filter: drop-shadow(40px 20px 25px rgb(51, 51, 51));
+    transform: scaleX(0.4);
+  }
+  51% {
+    transform:scaleX(1);
+  }
+  100% {
+    right: 0px;
+    filter: drop-shadow(120px 20px 25px rgb(51, 51, 51));
+  }
+}
+
+@keyframes showText {
+  0% {
+    opacity: 0;
+  }
+  49% {
+    opacity: 0;
+  }
+  51% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes hideText {
+  0% {
+    opacity: 1;
+  }
+  49% {
+    opacity: 1;
+  }
+  51% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
